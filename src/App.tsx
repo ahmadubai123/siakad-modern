@@ -13,16 +13,44 @@ import LaporanModules from './components/LaporanModules.tsx';
 import SettingsModules from './components/SettingsModules.tsx';
 import { LogIn, Key, Sparkles, AlertCircle, RefreshCw } from 'lucide-react';
 
+type StoredUser = {
+  username: string;
+  displayName: string;
+  email: string;
+  role: 'Administrator' | 'Dosen' | 'Mahasiswa';
+  referenceId: string;
+};
+
+const AUTH_KEY = 'siaakad_session';
+
+function loadSession(): { isAuthenticated: boolean; currentUser: StoredUser } {
+  try {
+    const raw = localStorage.getItem(AUTH_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw) as { user?: StoredUser; authenticated?: boolean };
+      if (parsed?.authenticated && parsed.user) {
+        return { isAuthenticated: true, currentUser: parsed.user };
+      }
+    }
+  } catch {
+    // ignore
+  }
+  return {
+    isAuthenticated: false,
+    currentUser: {
+      username: '',
+      displayName: '',
+      email: '',
+      role: 'Administrator',
+      referenceId: '',
+    },
+  };
+}
+
 export default function App() {
-  // Authentication & session management states
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Default to false to showcase the login page
-  const [currentUser, setCurrentUser] = useState({
-    username: 'admin',
-    displayName: 'Administrator Utama',
-    email: 'admin@siakad.ac.id',
-    role: 'Administrator' as 'Administrator' | 'Dosen' | 'Mahasiswa',
-    referenceId: 'adm-01',
-  });
+  const initial = loadSession();
+  const [isAuthenticated, setIsAuthenticated] = useState(initial.isAuthenticated);
+  const [currentUser, setCurrentUser] = useState<StoredUser>(initial.currentUser);
 
   const [activeView, setActiveView] = useState('dashboard');
   const [darkMode, setDarkMode] = useState(false);
@@ -30,7 +58,9 @@ export default function App() {
   // Login form states
   const [usernameInput, setUsernameInput] = useState('admin');
   const [passwordInput, setPasswordInput] = useState('admin');
-  const [roleInput, setRoleInput] = useState<'Administrator' | 'Dosen' | 'Mahasiswa'>('Administrator');
+  const [roleInput, setRoleInput] = useState<'Administrator' | 'Dosen' | 'Mahasiswa'>(
+    currentUser.role || 'Administrator'
+  );
   const [loginError, setLoginError] = useState('');
   const [loginLoading, setLoginLoading] = useState(false);
 
@@ -84,6 +114,7 @@ export default function App() {
       role: newRole,
       referenceId,
     });
+    localStorage.setItem(AUTH_KEY, JSON.stringify({ authenticated: true, user: { username, displayName, email, role: newRole, referenceId } }));
     // Return to dashboard on role change to avoid view mismatch
     setActiveView('dashboard');
   };
@@ -118,6 +149,7 @@ export default function App() {
         });
         setActiveView('dashboard');
         setLoginLoading(false);
+        localStorage.setItem(AUTH_KEY, JSON.stringify({ authenticated: true, user: data.user }));
       })
       .catch((err) => {
         setLoginError(err.message || 'Koneksi ke sistem SIAKAD gagal.');
@@ -129,8 +161,16 @@ export default function App() {
     fetch('/api/auth/logout', { method: 'POST' })
       .then(() => {
         setIsAuthenticated(false);
+        setCurrentUser({
+          username: '',
+          displayName: '',
+          email: '',
+          role: 'Administrator',
+          referenceId: '',
+        });
         setUsernameInput('');
         setPasswordInput('');
+        localStorage.removeItem(AUTH_KEY);
       })
       .catch((e) => console.error(e));
   };
@@ -138,7 +178,7 @@ export default function App() {
   // Login page layout
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f4f6f9] dark:bg-slate-950 p-4 font-sans selection:bg-blue-500 selection:text-white transition-colors duration-300">
+      <div className="flex min-h-screen items-center justify-center bg-white p-4 font-sans selection:bg-red-700 selection:text-white transition-colors duration-300">
         <div className="w-full max-w-md space-y-6">
           <div className="text-center space-y-2">
             <div className="flex justify-center mb-4">
@@ -171,7 +211,7 @@ export default function App() {
                   placeholder="e.g. admin atau 220102030"
                   value={usernameInput}
                   onChange={(e) => setUsernameInput(e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-blue-500"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-red-500"
                   required
                 />
               </div>
@@ -184,7 +224,7 @@ export default function App() {
                   placeholder="••••••••"
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-blue-500"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-red-500"
                   required
                 />
               </div>
@@ -195,7 +235,7 @@ export default function App() {
                   id="login-role"
                   value={roleInput}
                   onChange={(e) => handleRoleChangeInLogin(e.target.value as any)}
-                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-blue-500"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-red-500"
                 >
                   <option value="Administrator" className="bg-white dark:bg-slate-800">Administrator (admin)</option>
                   <option value="Dosen" className="bg-white dark:bg-slate-800">Dosen Wali (0411027501)</option>
@@ -208,7 +248,7 @@ export default function App() {
                 id="login-submit-btn"
                 type="submit"
                 disabled={loginLoading}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3.5 text-white font-black hover:bg-blue-700 transition-colors duration-200 shadow-md shadow-blue-500/10"
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-red-800 py-3.5 text-white font-black hover:bg-red-900 transition-colors duration-200 shadow-md shadow-red-900/10"
               >
                 {loginLoading ? (
                   <RefreshCw className="w-4 h-4 animate-spin" />
@@ -228,7 +268,7 @@ export default function App() {
 
   // Authenticated Dashboard & Sidebar/Navbar layouts
   return (
-    <div className="min-h-screen bg-[#f4f6f9] dark:bg-slate-950 font-sans text-slate-600 dark:text-slate-300 selection:bg-blue-500 selection:text-white transition-colors duration-300 flex">
+    <div className="min-h-screen bg-white font-sans text-slate-600 dark:text-slate-300 selection:bg-red-700 selection:text-white transition-colors duration-300 flex">
       {/* Dynamic Role-Based Sidebar */}
       <Sidebar
         activeView={activeView}
@@ -281,7 +321,13 @@ export default function App() {
             <SettingsModules
               activeView={activeView}
               currentUser={currentUser}
-              onUpdateCurrentUser={(updates) => setCurrentUser((prev) => ({ ...prev, ...updates }))}
+              onUpdateCurrentUser={(updates) => {
+                setCurrentUser((prev) => {
+                  const next = { ...prev, ...updates };
+                  localStorage.setItem(AUTH_KEY, JSON.stringify({ authenticated: true, user: next }));
+                  return next;
+                });
+              }}
             />
           )}
         </main>

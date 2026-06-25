@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -463,7 +463,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
       {/* Toast Alert */}
       {toast && (
         <div className={`fixed top-20 right-4 z-50 flex items-center gap-2 p-4 rounded-xl shadow-lg border text-xs font-semibold ${
-          toast.type === 'success' ? 'bg-blue-50 border-blue-200 text-blue-800 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-300' : 'bg-rose-50 border-rose-200 text-rose-800 dark:bg-rose-950 dark:border-rose-800 dark:text-rose-300'
+          toast.type === 'success' ? 'bg-red-50 border-red-200 text-red-900 dark:bg-red-950 dark:border-red-800 dark:text-red-400' : 'bg-rose-50 border-rose-200 text-rose-800 dark:bg-rose-950 dark:border-rose-800 dark:text-rose-300'
         }`}>
           <Check className="w-4 h-4" />
           <span>{toast.msg}</span>
@@ -507,7 +507,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
           <button
             id="add-master-btn"
             onClick={handleOpenAdd}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 text-xs shadow-sm transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-red-800 text-white font-semibold hover:bg-red-900 text-xs shadow-sm transition-colors"
           >
             <Plus className="w-4 h-4" />
             <span>Tambah Data</span>
@@ -524,7 +524,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
             placeholder="Cari kata kunci..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-blue-500"
+            className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-red-500"
           />
         </div>
 
@@ -533,7 +533,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
           <select
             value={filterKey}
             onChange={(e) => setFilterKey(e.target.value)}
-            className="text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-blue-500"
+            className="text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-red-500"
           >
             <option value="">Semua Program Studi</option>
             {prodiList.map((p) => (
@@ -546,7 +546,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
           <select
             value={filterKey}
             onChange={(e) => setFilterKey(e.target.value)}
-            className="text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-blue-500"
+            className="text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-red-500"
           >
             <option value="">Semua Fakultas</option>
             {fakultasList.map((f) => (
@@ -559,7 +559,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
           <select
             value={filterKey}
             onChange={(e) => setFilterKey(e.target.value)}
-            className="text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-blue-500"
+            className="text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-red-500"
           >
             <option value="">Semua Program Studi</option>
             {prodiList.map((p) => (
@@ -670,19 +670,19 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-mahasiswa' &&
                 paginated.map((m: Mahasiswa) => (
                   <tr key={m.nim} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{m.nim}</td>
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">{m.nim}</td>
                     <td className="px-4 py-3 font-semibold">{m.nama}</td>
                     <td className="px-4 py-3">{m.jenisKelamin}</td>
                     <td className="px-4 py-3">{prodiList.find((p) => p.id === m.prodiId)?.nama || m.prodiId}</td>
                     <td className="px-4 py-3 text-center">{m.semester}</td>
                     <td className="px-4 py-3">
                       <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                        m.status === 'Aktif' ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-400' : 'bg-amber-50 text-amber-700'
+                        m.status === 'Aktif' ? 'bg-red-50 text-red-900 dark:bg-red-950/40 dark:text-red-600' : 'bg-amber-50 text-amber-700'
                       }`}>{m.status}</span>
                     </td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(m)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(m)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(m.nim, m.nama)} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -692,17 +692,17 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-dosen' &&
                 paginated.map((d: Dosen) => (
                   <tr key={d.nidn} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{d.nidn}</td>
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">{d.nidn}</td>
                     <td className="px-4 py-3 font-semibold">{d.nama}</td>
                     <td className="px-4 py-3">{d.gelar}</td>
                     <td className="px-4 py-3">{d.email}</td>
                     <td className="px-4 py-3">{d.noHp}</td>
                     <td className="px-4 py-3">
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-400">{d.status}</span>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-900 dark:bg-red-950/40 dark:text-red-600">{d.status}</span>
                     </td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(d)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(d)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(d.nidn, d.nama)} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -712,12 +712,12 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-fakultas' &&
                 paginated.map((f: Fakultas) => (
                   <tr key={f.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{f.kode}</td>
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">{f.kode}</td>
                     <td className="px-4 py-3 font-semibold">{f.nama}</td>
                     <td className="px-4 py-3">{f.dekan}</td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(f)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(f)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(f.id, f.nama)} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -727,12 +727,12 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-prodi' &&
                 paginated.map((p: ProgramStudi) => (
                   <tr key={p.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{p.kode}</td>
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">{p.kode}</td>
                     <td className="px-4 py-3 font-semibold">{p.nama}</td>
                     <td className="px-4 py-3">{fakultasList.find((f) => f.id === p.fakultasId)?.nama || p.fakultasId}</td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(p)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(p)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(p.id, p.nama)} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -742,14 +742,14 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-matakuliah' &&
                 paginated.map((mk: MataKuliah) => (
                   <tr key={mk.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{mk.kode}</td>
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">{mk.kode}</td>
                     <td className="px-4 py-3 font-semibold">{mk.nama}</td>
                     <td className="px-4 py-3 font-bold text-center">{mk.sks} SKS</td>
                     <td className="px-4 py-3 text-center">Semester {mk.semester}</td>
                     <td className="px-4 py-3">{prodiList.find((p) => p.id === mk.prodiId)?.nama || mk.prodiId}</td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(mk)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(mk)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(mk.id, mk.nama)} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -759,13 +759,13 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-kelas' &&
                 paginated.map((k: Kelas) => (
                   <tr key={k.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{k.nama}</td>
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">{k.nama}</td>
                     <td className="px-4 py-3 text-center">{k.semester}</td>
                     <td className="px-4 py-3 font-semibold">{dosenList.find((d) => d.nidn === k.dosenNidn)?.nama || k.dosenNidn}</td>
                     <td className="px-4 py-3 font-semibold">{k.kapasitas} Mahasiswa</td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(k)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(k)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(k.id, k.nama)} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -775,7 +775,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-jadwal' &&
                 paginated.map((j: Jadwal) => (
                   <tr key={j.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">
                       {mkList.find((mk) => mk.id === j.matakuliahId)?.nama || j.matakuliahId}
                     </td>
                     <td className="px-4 py-3">{kelasList.find((k) => k.id === j.kelasId)?.nama || j.kelasId}</td>
@@ -784,7 +784,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                     <td className="px-4 py-3 font-semibold">{dosenList.find((d) => d.nidn === j.dosenNidn)?.nama || j.dosenNidn}</td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(j)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(j)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(j.id, 'Jadwal MK')} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -794,16 +794,16 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               {activeView === 'master-tahun-akademik' &&
                 paginated.map((ta: TahunAkademik) => (
                   <tr key={ta.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                    <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">{ta.tahun}</td>
+                    <td className="px-4 py-3 font-semibold text-red-800 dark:text-red-600">{ta.tahun}</td>
                     <td className="px-4 py-3 font-bold">{ta.semesterTipe}</td>
                     <td className="px-4 py-3">
                       <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                        ta.status === 'Aktif' ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-400' : 'bg-rose-50 text-rose-700 dark:bg-rose-950/40 dark:text-rose-400'
+                        ta.status === 'Aktif' ? 'bg-red-50 text-red-900 dark:bg-red-950/40 dark:text-red-600' : 'bg-rose-50 text-rose-700 dark:bg-rose-950/40 dark:text-rose-400'
                       }`}>{ta.status}</span>
                     </td>
                     <td className="px-4 py-3 text-right">
                       <div className="flex justify-end gap-1.5">
-                        <button onClick={() => handleOpenEdit(ta)} className="p-1 rounded-md text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => handleOpenEdit(ta)} className="p-1 rounded-md text-slate-400 hover:text-red-800 hover:bg-slate-100 dark:hover:bg-slate-800"><Edit2 className="w-3.5 h-3.5" /></button>
                         <button onClick={() => handleDelete(ta.id, ta.tahun)} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
@@ -831,7 +831,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   onClick={() => setCurrentPage(i + 1)}
                   className={`px-2.5 py-1 rounded-md font-bold ${
                     currentPage === i + 1
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-red-800 text-white'
                       : 'border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900'
                   }`}
                 >
@@ -863,7 +863,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   value={mhsForm.nim || ''}
                   onChange={(e) => setMhsForm({ ...mhsForm, nim: e.target.value })}
                   disabled={!!editItem}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nim && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nim}</p>}
               </div>
@@ -873,7 +873,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={mhsForm.nama || ''}
                   onChange={(e) => setMhsForm({ ...mhsForm, nama: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nama && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nama}</p>}
               </div>
@@ -882,7 +882,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={mhsForm.jenisKelamin || 'Laki-laki'}
                   onChange={(e) => setMhsForm({ ...mhsForm, jenisKelamin: e.target.value as any })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 >
                   <option value="Laki-laki">Laki-laki</option>
                   <option value="Perempuan">Perempuan</option>
@@ -893,7 +893,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={mhsForm.prodiId || ''}
                   onChange={(e) => setMhsForm({ ...mhsForm, prodiId: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   <option value="">-- Pilih Program Studi --</option>
                   {prodiList && prodiList.length > 0 ? (
@@ -911,7 +911,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="email"
                   value={mhsForm.email || ''}
                   onChange={(e) => setMhsForm({ ...mhsForm, email: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.email && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.email}</p>}
               </div>
@@ -921,7 +921,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="password"
                   value={mhsForm.password || ''}
                   onChange={(e) => setMhsForm({ ...mhsForm, password: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                   placeholder={editItem ? 'Isi jika ingin mengubah password' : 'Masukkan password akun mahasiswa'}
                 />
                 {formErrors.password && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.password}</p>}
@@ -932,7 +932,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={mhsForm.noHp || ''}
                   onChange={(e) => setMhsForm({ ...mhsForm, noHp: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -941,7 +941,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="number"
                   value={mhsForm.semester || 1}
                   onChange={(e) => setMhsForm({ ...mhsForm, semester: parseInt(e.target.value) })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -949,7 +949,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={mhsForm.status || 'Aktif'}
                   onChange={(e) => setMhsForm({ ...mhsForm, status: e.target.value as any })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 >
                   <option value="Aktif">Aktif</option>
                   <option value="Cuti">Cuti</option>
@@ -963,7 +963,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   value={mhsForm.alamat || ''}
                   onChange={(e) => setMhsForm({ ...mhsForm, alamat: e.target.value })}
                   rows={2}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
             </div>
@@ -978,7 +978,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   value={dosenForm.nidn || ''}
                   onChange={(e) => setDosenForm({ ...dosenForm, nidn: e.target.value })}
                   disabled={!!editItem}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nidn && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nidn}</p>}
               </div>
@@ -988,7 +988,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={dosenForm.nama || ''}
                   onChange={(e) => setDosenForm({ ...dosenForm, nama: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nama && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nama}</p>}
               </div>
@@ -999,7 +999,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. M.T., Ph.D."
                   value={dosenForm.gelar || ''}
                   onChange={(e) => setDosenForm({ ...dosenForm, gelar: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -1008,7 +1008,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="email"
                   value={dosenForm.email || ''}
                   onChange={(e) => setDosenForm({ ...dosenForm, email: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.email && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.email}</p>}
               </div>
@@ -1018,7 +1018,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={dosenForm.noHp || ''}
                   onChange={(e) => setDosenForm({ ...dosenForm, noHp: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -1026,7 +1026,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={dosenForm.status || 'Aktif'}
                   onChange={(e) => setDosenForm({ ...dosenForm, status: e.target.value as any })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 >
                   <option value="Aktif">Aktif</option>
                   <option value="Cuti">Cuti</option>
@@ -1044,7 +1044,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. FIK"
                   value={fakultasForm.kode || ''}
                   onChange={(e) => setFakultasForm({ ...fakultasForm, kode: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.kode && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.kode}</p>}
               </div>
@@ -1054,7 +1054,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={fakultasForm.nama || ''}
                   onChange={(e) => setFakultasForm({ ...fakultasForm, nama: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nama && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nama}</p>}
               </div>
@@ -1064,7 +1064,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={fakultasForm.dekan || ''}
                   onChange={(e) => setFakultasForm({ ...fakultasForm, dekan: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
             </div>
@@ -1079,7 +1079,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. TIF"
                   value={prodiForm.kode || ''}
                   onChange={(e) => setProdiForm({ ...prodiForm, kode: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.kode && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.kode}</p>}
               </div>
@@ -1089,7 +1089,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={prodiForm.nama || ''}
                   onChange={(e) => setProdiForm({ ...prodiForm, nama: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nama && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nama}</p>}
               </div>
@@ -1103,7 +1103,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                       setFormErrors({ ...formErrors, fakultasId: '' });
                     }
                   }}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   <option value="">-- Pilih Fakultas --</option>
                   {fakultasList.map((f) => (
@@ -1124,7 +1124,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. TIF-201"
                   value={mkForm.kode || ''}
                   onChange={(e) => setMkForm({ ...mkForm, kode: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.kode && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.kode}</p>}
               </div>
@@ -1134,7 +1134,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="text"
                   value={mkForm.nama || ''}
                   onChange={(e) => setMkForm({ ...mkForm, nama: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nama && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nama}</p>}
               </div>
@@ -1144,7 +1144,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="number"
                   value={mkForm.sks || 3}
                   onChange={(e) => setMkForm({ ...mkForm, sks: parseInt(e.target.value) })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.sks && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.sks}</p>}
               </div>
@@ -1154,7 +1154,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="number"
                   value={mkForm.semester || 1}
                   onChange={(e) => setMkForm({ ...mkForm, semester: parseInt(e.target.value) })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1 sm:col-span-2">
@@ -1162,7 +1162,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={mkForm.prodiId || ''}
                   onChange={(e) => setMkForm({ ...mkForm, prodiId: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   {prodiList.map((p) => (
                     <option key={p.id} value={p.id}>{p.nama}</option>
@@ -1182,7 +1182,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. TIF-4A"
                   value={kelasForm.nama || ''}
                   onChange={(e) => setKelasForm({ ...kelasForm, nama: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.nama && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.nama}</p>}
               </div>
@@ -1192,7 +1192,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="number"
                   value={kelasForm.semester || 1}
                   onChange={(e) => setKelasForm({ ...kelasForm, semester: parseInt(e.target.value) })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -1201,7 +1201,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   type="number"
                   value={kelasForm.kapasitas || 30}
                   onChange={(e) => setKelasForm({ ...kelasForm, kapasitas: parseInt(e.target.value) })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -1209,7 +1209,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={kelasForm.dosenNidn || ''}
                   onChange={(e) => setKelasForm({ ...kelasForm, dosenNidn: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   {dosenList.map((d) => (
                     <option key={d.nidn} value={d.nidn}>{d.nama}</option>
@@ -1227,7 +1227,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={jadwalForm.matakuliahId || ''}
                   onChange={(e) => setJadwalForm({ ...jadwalForm, matakuliahId: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   {mkList.map((mk) => (
                     <option key={mk.id} value={mk.id}>{mk.nama}</option>
@@ -1239,7 +1239,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={jadwalForm.kelasId || ''}
                   onChange={(e) => setJadwalForm({ ...jadwalForm, kelasId: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   {kelasList.map((k) => (
                     <option key={k.id} value={k.id}>{k.nama}</option>
@@ -1251,7 +1251,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={jadwalForm.hari || 'Senin'}
                   onChange={(e) => setJadwalForm({ ...jadwalForm, hari: e.target.value as any })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   <option value="Senin">Senin</option>
                   <option value="Selasa">Selasa</option>
@@ -1268,7 +1268,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. Lab Komputer 1"
                   value={jadwalForm.ruang || ''}
                   onChange={(e) => setJadwalForm({ ...jadwalForm, ruang: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -1278,7 +1278,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. 08:00"
                   value={jadwalForm.jamMulai || ''}
                   onChange={(e) => setJadwalForm({ ...jadwalForm, jamMulai: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1">
@@ -1288,7 +1288,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. 10:30"
                   value={jadwalForm.jamSelesai || ''}
                   onChange={(e) => setJadwalForm({ ...jadwalForm, jamSelesai: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
               </div>
               <div className="space-y-1 sm:col-span-2">
@@ -1296,7 +1296,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={jadwalForm.dosenNidn || ''}
                   onChange={(e) => setJadwalForm({ ...jadwalForm, dosenNidn: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500 relative z-50"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500 relative z-50"
                 >
                   {dosenList.map((d) => (
                     <option key={d.nidn} value={d.nidn}>{d.nama}</option>
@@ -1315,7 +1315,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                   placeholder="e.g. 2026/2027"
                   value={taForm.tahun || ''}
                   onChange={(e) => setTaForm({ ...taForm, tahun: e.target.value })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 />
                 {formErrors.tahun && <p className="text-[10px] text-rose-500 font-semibold">{formErrors.tahun}</p>}
               </div>
@@ -1324,7 +1324,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={taForm.semesterTipe || 'Ganjil'}
                   onChange={(e) => setTaForm({ ...taForm, semesterTipe: e.target.value as any })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 >
                   <option value="Ganjil">Ganjil</option>
                   <option value="Genap">Genap</option>
@@ -1335,7 +1335,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
                 <select
                   value={taForm.status || 'Tidak Aktif'}
                   onChange={(e) => setTaForm({ ...taForm, status: e.target.value as any })}
-                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-blue-500"
+                  className="w-full text-xs p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-red-500"
                 >
                   <option value="Aktif">Aktif</option>
                   <option value="Tidak Aktif">Tidak Aktif</option>
@@ -1355,7 +1355,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
             </button>
             <button
               type="submit"
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 shadow-sm transition-colors animate-pulse-slow"
+              className="px-4 py-2 rounded-lg bg-red-800 text-white text-xs font-semibold hover:bg-red-900 shadow-sm transition-colors animate-pulse-slow"
             >
               Simpan Perubahan
             </button>
@@ -1385,7 +1385,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
               onChange={(e) => setImportText(e.target.value)}
               placeholder="Masukkan baris-baris data..."
               rows={6}
-              className="w-full text-xs font-mono p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-blue-500"
+              className="w-full text-xs font-mono p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-red-500"
             />
           </div>
 
@@ -1399,7 +1399,7 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
             </button>
             <button
               type="submit"
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 shadow-sm"
+              className="px-4 py-2 rounded-lg bg-red-800 text-white text-xs font-semibold hover:bg-red-900 shadow-sm"
             >
               Impor Sekarang
             </button>
@@ -1409,3 +1409,4 @@ export default function MasterDataModules({ activeView, onRefreshAll }: MasterDa
     </div>
   );
 }
+

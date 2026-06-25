@@ -1,5 +1,20 @@
 {
-  "mahasiswa": [],
+  "mahasiswa": [
+    {
+      "nim": "14012300096",
+      "nama": "AHMAD UBAIDILLAH",
+      "jenisKelamin": "Laki-laki",
+      "tempatLahir": "",
+      "tanggalLahir": "",
+      "email": "a.ubaidillah@gmail.com",
+      "noHp": "081234567890",
+      "alamat": "cilegon",
+      "foto": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150",
+      "semester": 1,
+      "prodiId": "pro-1782370696097",
+      "status": "Aktif"
+    }
+  ],
   "dosen": [],
   "fakultas": [
     {
@@ -144,6 +159,206 @@
     }
   ],
   "auditLog": [
+    {
+      "id": "log-1782402956221-854",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Tambah Mahasiswa",
+      "deskripsi": "Berhasil menambahkan Mahasiswa baru: AHMAD UBAIDILLAH",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:55:56.221Z"
+    },
+    {
+      "id": "log-1782402583159-970",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:49:43.159Z"
+    },
+    {
+      "id": "log-1782402569699-580",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:49:29.700Z"
+    },
+    {
+      "id": "log-1782402315553-733",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:45:15.553Z"
+    },
+    {
+      "id": "log-1782402307179-695",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:45:07.179Z"
+    },
+    {
+      "id": "log-1782402296930-382",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:44:56.930Z"
+    },
+    {
+      "id": "log-1782402293233-534",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:44:53.233Z"
+    },
+    {
+      "id": "log-1782402290158-403",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:44:50.158Z"
+    },
+    {
+      "id": "log-1782402286610-358",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:44:46.610Z"
+    },
+    {
+      "id": "log-1782402270636-741",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:44:30.636Z"
+    },
+    {
+      "id": "log-1782402254076-487",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:44:14.076Z"
+    },
+    {
+      "id": "log-1782402245750-170",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:44:05.750Z"
+    },
+    {
+      "id": "log-1782401625575-790",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:33:45.575Z"
+    },
+    {
+      "id": "log-1782401160013-432",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:26:00.013Z"
+    },
+    {
+      "id": "log-1782401155341-477",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:25:55.341Z"
+    },
+    {
+      "id": "log-1782401141641-843",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:25:41.641Z"
+    },
+    {
+      "id": "log-1782401136753-397",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:25:36.753Z"
+    },
+    {
+      "id": "log-1782401130373-566",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:25:30.373Z"
+    },
+    {
+      "id": "log-1782401122961-660",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:25:22.961Z"
+    },
+    {
+      "id": "log-1782401085213-628",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T15:24:45.213Z"
+    },
     {
       "id": "log-1782393755553-635",
       "userId": "usr-admin",
@@ -660,6 +875,15 @@
       "role": "Mahasiswa",
       "referenceId": "220102001",
       "status": "Aktif"
+    },
+    {
+      "id": "usr-mhs-14012300096",
+      "username": "14012300096",
+      "email": "a.ubaidillah@gmail.com",
+      "role": "Mahasiswa",
+      "referenceId": "14012300096",
+      "status": "Aktif",
+      "password": "123"
     }
   ]
 }

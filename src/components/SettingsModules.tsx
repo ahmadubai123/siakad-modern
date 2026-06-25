@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -99,7 +99,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[50vh]">
-        <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-8 h-8 border-4 border-red-800 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -194,7 +194,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
   return (
     <div className="space-y-4">
       {toast && (
-        <div className="fixed top-20 right-4 z-50 flex items-center gap-2 p-4 rounded-xl bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold shadow-lg">
+        <div className="fixed top-20 right-4 z-50 flex items-center gap-2 p-4 rounded-xl bg-red-50 border border-red-200 text-red-900 text-xs font-semibold shadow-lg">
           <Check className="w-4 h-4" />
           <span>{toast.msg}</span>
         </div>
@@ -214,7 +214,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                 setSelectedUser({ username: '', email: '', role: 'Mahasiswa' });
                 setUserModalOpen(true);
               }}
-              className="text-xs px-3 py-1.5 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 flex items-center gap-1 shadow-sm"
+              className="text-xs px-3 py-1.5 rounded-lg bg-red-800 text-white font-bold hover:bg-red-900 flex items-center gap-1 shadow-sm"
             >
               <Plus className="w-4 h-4" />
               Tambah User
@@ -229,7 +229,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                 placeholder="Cari username atau email..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border focus:outline-blue-500"
+                className="w-full pl-9 pr-4 py-1.5 text-xs rounded-lg border focus:outline-red-500"
               />
             </div>
 
@@ -257,11 +257,11 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                         <td className="p-3 font-semibold">{u.email}</td>
                         <td className="p-3">
                           <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                            u.role === 'Administrator' ? 'bg-indigo-50 text-indigo-700' : u.role === 'Dosen' ? 'bg-amber-50 text-amber-700' : 'bg-blue-50 text-blue-700'
+                            u.role === 'Administrator' ? 'bg-red-50 text-red-900' : u.role === 'Dosen' ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-900'
                           }`}>{u.role}</span>
                         </td>
                         <td className="p-3">
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700">Aktif</span>
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-900">Aktif</span>
                         </td>
                         <td className="p-3 text-right">
                           <div className="flex justify-end gap-1.5">
@@ -308,7 +308,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                   type="text"
                   value={selectedUser.username || ''}
                   onChange={(e) => setSelectedUser({ ...selectedUser, username: e.target.value })}
-                  className="w-full text-xs p-2.5 rounded-lg border focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 rounded-lg border focus:outline-red-500"
                   required
                 />
               </div>
@@ -319,7 +319,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                   type="email"
                   value={selectedUser.email || ''}
                   onChange={(e) => setSelectedUser({ ...selectedUser, email: e.target.value })}
-                  className="w-full text-xs p-2.5 rounded-lg border focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 rounded-lg border focus:outline-red-500"
                   required
                 />
               </div>
@@ -347,7 +347,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold"
+                  className="px-4 py-2 bg-red-800 text-white rounded-lg text-xs font-semibold"
                 >
                   Simpan Akun
                 </button>
@@ -369,13 +369,13 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
             {Object.keys(permissions).map((role) => (
               <div key={role} className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
                 <div className="flex items-center gap-2 border-b pb-2">
-                  <Shield className="w-5 h-5 text-blue-600" />
+                  <Shield className="w-5 h-5 text-red-800" />
                   <h3 className="font-bold text-sm text-slate-800 dark:text-white">{role}</h3>
                 </div>
                 <div className="space-y-1.5 overflow-y-auto h-96 text-xs text-slate-600">
                   {permissions[role].map((p, i) => (
                     <div key={i} className="flex items-center gap-2 p-1.5 bg-slate-50 rounded">
-                      <Check className="w-3.5 h-3.5 text-blue-600 font-extrabold" />
+                      <Check className="w-3.5 h-3.5 text-red-800 font-extrabold" />
                       <span className="font-semibold text-slate-700">{p}</span>
                     </div>
                   ))}
@@ -396,7 +396,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
             </div>
             <button
               onClick={handleCreateBackup}
-              className="text-xs px-3 py-1.5 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 flex items-center gap-1.5 shadow-sm"
+              className="text-xs px-3 py-1.5 rounded-lg bg-red-800 text-white font-bold hover:bg-red-900 flex items-center gap-1.5 shadow-sm"
             >
               <Database className="w-4 h-4" />
               Backup Database
@@ -405,7 +405,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
 
           <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
             <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-              <History className="w-4 h-4 text-blue-500" />
+              <History className="w-4 h-4 text-red-700" />
               Backup History Logs
             </h3>
 
@@ -434,7 +434,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                             className="p-1 border rounded hover:bg-slate-50"
                             title="Unduh SQL"
                           >
-                            <Download className="w-3.5 h-3.5 text-blue-600" />
+                            <Download className="w-3.5 h-3.5 text-red-800" />
                           </button>
                           <button
                             onClick={() => handleRestoreBackup(b.name)}
@@ -483,7 +483,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
 
                   {auditLogs.map((log) => (
                     <tr key={log.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                      <td className="p-3 font-bold text-blue-600">{log.user}</td>
+                      <td className="p-3 font-bold text-red-800">{log.user}</td>
                       <td className="p-3 font-semibold text-slate-800 dark:text-slate-200">{log.action}</td>
                       <td className="p-3 font-mono text-[10px] text-slate-400 select-all">{JSON.stringify(log.details)}</td>
                       <td className="p-3 text-right font-semibold text-slate-500">{new Date(log.timestamp).toLocaleString()}</td>
@@ -523,7 +523,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
               <div>
                 <h3 className="font-bold text-sm text-slate-800 dark:text-white">{currentUser.displayName}</h3>
                 <p className="text-xs text-slate-400 mt-0.5">{currentUser.email}</p>
-                <span className="inline-block mt-2 px-3 py-1 rounded-full text-[10px] font-extrabold bg-blue-50 text-blue-700">
+                <span className="inline-block mt-2 px-3 py-1 rounded-full text-[10px] font-extrabold bg-red-50 text-red-900">
                   {currentUser.role}
                 </span>
               </div>
@@ -552,7 +552,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                     type="text"
                     value={profileForm.displayName}
                     onChange={(e) => setProfileForm({ ...profileForm, displayName: e.target.value })}
-                    className="w-full text-xs p-2.5 rounded-lg border focus:outline-blue-500"
+                    className="w-full text-xs p-2.5 rounded-lg border focus:outline-red-500"
                   />
                 </div>
 
@@ -562,7 +562,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                     type="email"
                     value={profileForm.email}
                     onChange={(e) => setProfileForm({ ...profileForm, email: e.target.value })}
-                    className="w-full text-xs p-2.5 rounded-lg border focus:outline-blue-500"
+                    className="w-full text-xs p-2.5 rounded-lg border focus:outline-red-500"
                   />
                 </div>
 
@@ -572,7 +572,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                     type="text"
                     value={profileForm.phone}
                     onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
-                    className="w-full text-xs p-2.5 rounded-lg border focus:outline-blue-500"
+                    className="w-full text-xs p-2.5 rounded-lg border focus:outline-red-500"
                   />
                 </div>
               </div>
@@ -580,7 +580,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
               <div className="flex justify-between items-center border-t border-slate-100 pt-4">
                 <button
                   onClick={() => setPwdModalOpen(true)}
-                  className="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1"
+                  className="text-xs font-bold text-red-800 hover:underline flex items-center gap-1"
                 >
                   <Key className="w-4 h-4" />
                   Ganti Password Keamanan
@@ -590,7 +590,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                     onUpdateCurrentUser({ displayName: profileForm.displayName, email: profileForm.email });
                     showToast('success', 'Perubahan profil berhasil disimpan!');
                   }}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-bold hover:bg-blue-700"
+                  className="px-4 py-2 bg-red-800 text-white rounded-lg text-xs font-bold hover:bg-red-900"
                 >
                   Simpan Profil
                 </button>
@@ -607,7 +607,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                   type="password"
                   value={pwdForm.oldPwd}
                   onChange={(e) => setPwdForm({ ...pwdForm, oldPwd: e.target.value })}
-                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-red-500"
                   required
                 />
               </div>
@@ -618,7 +618,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                   type="password"
                   value={pwdForm.newPwd}
                   onChange={(e) => setPwdForm({ ...pwdForm, newPwd: e.target.value })}
-                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-red-500"
                   required
                 />
               </div>
@@ -629,7 +629,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                   type="password"
                   value={pwdForm.confirmPwd}
                   onChange={(e) => setPwdForm({ ...pwdForm, confirmPwd: e.target.value })}
-                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-red-500"
                   required
                 />
               </div>
@@ -644,7 +644,7 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold"
+                  className="px-4 py-2 bg-red-800 text-white rounded-lg text-xs font-semibold"
                 >
                   Ganti Password
                 </button>
@@ -656,3 +656,4 @@ export default function SettingsModules({ activeView, currentUser, onUpdateCurre
     </div>
   );
 }
+

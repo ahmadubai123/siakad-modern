@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -48,7 +48,7 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[50vh]">
-        <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-8 h-8 border-4 border-red-800 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -106,7 +106,7 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
             onClick={handleExportCSV}
             className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border text-xs font-semibold hover:bg-slate-50 bg-white"
           >
-            <FileSpreadsheet className="w-4 h-4 text-blue-600" />
+            <FileSpreadsheet className="w-4 h-4 text-red-800" />
             Export Excel
           </button>
           <button
@@ -149,14 +149,14 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
         <div className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-4 rounded-xl border bg-white flex items-center gap-4">
-              <div className="p-3 bg-blue-50 text-blue-600 rounded-lg"><Users className="w-6 h-6" /></div>
+              <div className="p-3 bg-red-50 text-red-800 rounded-lg"><Users className="w-6 h-6" /></div>
               <div>
                 <p className="text-[10px] uppercase font-bold text-slate-400">Total Mahasiswa Terdaftar</p>
                 <p className="text-lg font-bold text-slate-800">{mhsList.length}</p>
               </div>
             </div>
             <div className="p-4 rounded-xl border bg-white flex items-center gap-4">
-              <div className="p-3 bg-blue-50 text-blue-600 rounded-lg"><Users className="w-6 h-6" /></div>
+              <div className="p-3 bg-red-50 text-red-800 rounded-lg"><Users className="w-6 h-6" /></div>
               <div>
                 <p className="text-[10px] uppercase font-bold text-slate-400">Mahasiswa Status Aktif</p>
                 <p className="text-lg font-bold text-slate-800">{mhsList.filter((m) => m.status === 'Aktif').length}</p>
@@ -189,13 +189,13 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
                   .filter((m) => m.nama.toLowerCase().includes(search.toLowerCase()) && (!prodiFilter || m.prodiId === prodiFilter))
                   .map((m) => (
                     <tr key={m.nim}>
-                      <td className="p-3 font-semibold text-blue-600">{m.nim}</td>
+                      <td className="p-3 font-semibold text-red-800">{m.nim}</td>
                       <td className="p-3 font-bold">{m.nama}</td>
                       <td className="p-3">{m.jenisKelamin}</td>
                       <td className="p-3">{prodiList.find((p) => p.id === m.prodiId)?.nama || m.prodiId}</td>
                       <td className="p-3 text-center">{m.semester}</td>
                       <td className="p-3">{m.email}</td>
-                      <td className="p-3"><span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700">{m.status}</span></td>
+                      <td className="p-3"><span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-900">{m.status}</span></td>
                     </tr>
                   ))}
               </tbody>
@@ -225,13 +225,13 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
                   .filter((d) => d.nama.toLowerCase().includes(search.toLowerCase()))
                   .map((d) => (
                     <tr key={d.nidn}>
-                      <td className="p-3 font-semibold text-blue-600">{d.nidn}</td>
+                      <td className="p-3 font-semibold text-red-800">{d.nidn}</td>
                       <td className="p-3 font-bold">{d.nama}</td>
                       <td className="p-3 font-semibold">{d.gelar}</td>
                       <td className="p-3">{d.email}</td>
                       <td className="p-3">{d.noHp}</td>
                       <td className="p-3">{d.alamat}</td>
-                      <td className="p-3"><span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700">{d.status}</span></td>
+                      <td className="p-3"><span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-900">{d.status}</span></td>
                     </tr>
                   ))}
               </tbody>
@@ -264,14 +264,14 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
                   const mk = mkList.find((m) => m.id === n.jadwalId); // simplistic relational binding
                   return (
                     <tr key={n.id}>
-                      <td className="p-3 font-semibold text-blue-600">{n.mahasiswaNim}</td>
+                      <td className="p-3 font-semibold text-red-800">{n.mahasiswaNim}</td>
                       <td className="p-3 font-bold">{mhs?.nama || 'Ahmad Fauzi'}</td>
                       <td className="p-3 font-bold">{mk?.nama || 'Pemrograman Web'}</td>
                       <td className="p-3 text-center">{n.tugas}</td>
                       <td className="p-3 text-center">{n.quiz}</td>
                       <td className="p-3 text-center">{n.uts}</td>
                       <td className="p-3 text-center">{n.uas}</td>
-                      <td className="p-3 text-center font-extrabold text-blue-600">{n.nilaiAkhir}</td>
+                      <td className="p-3 text-center font-extrabold text-red-800">{n.nilaiAkhir}</td>
                       <td className="p-3 text-center"><span className="px-2 py-0.5 rounded font-bold bg-slate-100">{n.grade}</span></td>
                     </tr>
                   );
@@ -287,7 +287,7 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
         <div className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl border bg-white flex items-center gap-4">
-              <div className="p-3 bg-indigo-50 text-indigo-600 rounded-lg"><Award className="w-6 h-6" /></div>
+              <div className="p-3 bg-red-50 text-indigo-600 rounded-lg"><Award className="w-6 h-6" /></div>
               <div>
                 <p className="text-[10px] uppercase font-bold text-slate-400">IPK Rata-Rata Universitas</p>
                 <p className="text-lg font-bold text-slate-800">3.56 / 4.00</p>
@@ -324,12 +324,12 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
 
                   return (
                     <tr key={m.nim}>
-                      <td className="p-3 font-semibold text-blue-600">{m.nim}</td>
+                      <td className="p-3 font-semibold text-red-800">{m.nim}</td>
                       <td className="p-3 font-bold">{m.nama}</td>
                       <td className="p-3">{prodiList.find((p) => p.id === m.prodiId)?.nama || m.prodiId}</td>
                       <td className="p-3 text-center font-semibold">4 Mata Kuliah</td>
                       <td className="p-3 text-center font-bold text-slate-600">{predikat}</td>
-                      <td className="p-3 text-center font-extrabold text-blue-600 bg-blue-50/10 font-mono text-sm">{ipk.toFixed(2)}</td>
+                      <td className="p-3 text-center font-extrabold text-red-800 bg-red-50/10 font-mono text-sm">{ipk.toFixed(2)}</td>
                     </tr>
                   );
                 })}
@@ -341,3 +341,4 @@ export default function LaporanModules({ activeView }: LaporanModulesProps) {
     </div>
   );
 }
+

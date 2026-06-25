@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -143,7 +143,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center gap-2">
-          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-red-700 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-sm font-semibold text-slate-500">Memuat modul akademik...</p>
         </div>
       </div>
@@ -416,7 +416,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
     <div className="space-y-4">
       {toast && (
         <div className={`fixed top-20 right-4 z-50 flex items-center gap-2 p-4 rounded-xl shadow-lg border text-xs font-semibold ${
-          toast.type === 'success' ? 'bg-blue-50 border-blue-200 text-blue-800 dark:bg-blue-950 dark:border-blue-800' : 'bg-rose-50 border-rose-200 text-rose-800'
+          toast.type === 'success' ? 'bg-red-50 border-red-200 text-red-900 dark:bg-red-950 dark:border-red-800' : 'bg-rose-50 border-rose-200 text-rose-800'
         }`}>
           <Check className="w-4 h-4" />
           <span>{toast.msg}</span>
@@ -437,7 +437,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
               {/* Enrollment Form */}
               <div className="lg:col-span-1 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
                 <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                  <Plus className="w-4 h-4 text-blue-500" />
+                  <Plus className="w-4 h-4 text-red-700" />
                   Ambil Mata Kuliah
                 </h3>
 
@@ -466,7 +466,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                   <button
                     id="submit-krs-btn"
                     onClick={handleAmbilKrs}
-                    className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 transition-colors shadow-sm"
+                    className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-red-800 text-white font-bold text-xs hover:bg-red-900 transition-colors shadow-sm"
                   >
                     Tambahkan ke KRS
                   </button>
@@ -476,7 +476,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
               {/* My active KRS */}
               <div className="lg:col-span-2 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
                 <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                  <FileCheck className="w-4 h-4 text-blue-500" />
+                  <FileCheck className="w-4 h-4 text-red-700" />
                   KRS Saya Semester Ini (Max 24 SKS)
                 </h3>
 
@@ -511,7 +511,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
 
                           return (
                             <tr key={k.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
-                              <td className="p-3 font-semibold text-blue-600">{mk?.kode}</td>
+                              <td className="p-3 font-semibold text-red-800">{mk?.kode}</td>
                               <td className="p-3 font-bold">{mk?.nama}</td>
                               <td className="p-3 font-semibold">{mk?.sks} SKS</td>
                               <td className="p-3">
@@ -520,7 +520,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                               <td className="p-3">{kls?.nama}</td>
                               <td className="p-3">
                                 <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                                  k.status === 'Disetujui' ? 'bg-blue-50 text-blue-700' : 'bg-amber-50 text-amber-700'
+                                  k.status === 'Disetujui' ? 'bg-red-50 text-red-900' : 'bg-amber-50 text-amber-700'
                                 }`}>{k.status}</span>
                               </td>
                               <td className="p-3 text-right">
@@ -545,7 +545,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
           {currentRole === 'Administrator' && (
             <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
               <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                <FileCheck className="w-4 h-4 text-blue-500" />
+                <FileCheck className="w-4 h-4 text-red-700" />
                 Antrean Persetujuan KRS Mahasiswa
               </h3>
 
@@ -602,7 +602,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                                 <button
                                   id="approve-krs-btn"
                                   onClick={() => handleApproveKrs(k.id, 'Disetujui')}
-                                  className="px-2.5 py-1 rounded bg-blue-600 text-white font-bold text-[10px] hover:bg-blue-700"
+                                  className="px-2.5 py-1 rounded bg-red-800 text-white font-bold text-[10px] hover:bg-red-900"
                                 >
                                   Setujui
                                 </button>
@@ -733,7 +733,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                                 className="w-16 p-1 border rounded text-center"
                               />
                             </td>
-                            <td className="p-3 text-center font-bold text-blue-600">
+                            <td className="p-3 text-center font-bold text-red-800">
                               {score ? score.nilaiAkhir : '-'}
                             </td>
                             <td className="p-3 text-center">
@@ -744,7 +744,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                             <td className="p-3 text-right">
                               <button
                                 onClick={() => handleCalculateNilai(m.nim)}
-                                className="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white font-bold"
+                                className="px-2.5 py-1.5 rounded-lg bg-red-800 text-white font-bold"
                               >
                                 Simpan
                               </button>
@@ -767,7 +767,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
           {currentRole === 'Mahasiswa' && (
             <div className="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
               <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                <Percent className="w-4 h-4 text-blue-500" />
+                <Percent className="w-4 h-4 text-red-700" />
                 Daftar Nilai Semester Saya
               </h3>
 
@@ -809,11 +809,11 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                             <td className="p-3 text-center">{n.quiz}</td>
                             <td className="p-3 text-center">{n.uts}</td>
                             <td className="p-3 text-center">{n.uas}</td>
-                            <td className="p-3 text-center font-extrabold text-blue-600 bg-blue-50/20">
+                            <td className="p-3 text-center font-extrabold text-red-800 bg-red-50/20">
                               {n.nilaiAkhir}
                             </td>
                             <td className="p-3 text-center font-bold">
-                              <span className="px-2.5 py-0.5 rounded bg-blue-50 text-blue-700">{n.grade}</span>
+                              <span className="px-2.5 py-0.5 rounded bg-red-50 text-red-900">{n.grade}</span>
                             </td>
                             <td className="p-3 text-center font-mono font-bold">{n.bobot.toFixed(2)}</td>
                           </tr>
@@ -848,7 +848,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
             {/* Student QR Code Kartu Mahasiswa Card */}
             <div className="lg:col-span-1 space-y-4">
               <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                <QrCode className="w-4.5 h-4.5 text-blue-500" />
+                <QrCode className="w-4.5 h-4.5 text-red-700" />
                 Kartu Mahasiswa & QR Code Akademik
               </h3>
 
@@ -857,13 +857,13 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                 <div className="flex justify-between items-start">
                   <div>
                     <span className="text-[10px] font-extrabold text-slate-400 tracking-widest uppercase">UNIVERSITAS SIAKAD</span>
-                    <h4 className="text-xs font-bold text-blue-500">KARTU TANDA MAHASISWA</h4>
+                    <h4 className="text-xs font-bold text-red-700">KARTU TANDA MAHASISWA</h4>
                   </div>
-                  <Sparkles className="w-5 h-5 text-blue-500 animate-pulse" />
+                  <Sparkles className="w-5 h-5 text-red-700 animate-pulse" />
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-red-700">
                     <img
                       src={
                         mhsList.find((m) => m.nim === currentUser.username)?.foto ||
@@ -876,7 +876,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                   <div className="space-y-1">
                     <p className="text-sm font-bold truncate max-w-40">{currentUser.displayName}</p>
                     <p className="text-xs font-semibold text-slate-400 font-mono">NIM: {currentUser.username}</p>
-                    <p className="text-[10px] text-blue-400 font-semibold truncate max-w-40">
+                    <p className="text-[10px] text-red-600 font-semibold truncate max-w-40">
                       {prodiList[0]?.nama || 'Teknik Informatika'}
                     </p>
                   </div>
@@ -946,7 +946,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
 
                         return (
                           <tr key={n.id} className="hover:bg-slate-50/50">
-                            <td className="p-3 font-mono font-bold text-blue-600">{mk?.kode}</td>
+                            <td className="p-3 font-mono font-bold text-red-800">{mk?.kode}</td>
                             <td className="p-3 font-semibold">{mk?.nama}</td>
                             <td className="p-3 text-center font-semibold">{mk?.sks} SKS</td>
                             <td className="p-3 text-center">{n.nilaiAkhir}</td>
@@ -978,7 +978,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                 </div>
                 <div className="text-right">
                   <p className="text-slate-500 font-semibold">Indeks Prestasi Kumulatif (IPK):</p>
-                  <p className="text-lg font-extrabold text-blue-600 dark:text-blue-400">
+                  <p className="text-lg font-extrabold text-red-800 dark:text-red-600">
                     {(
                       nilaiList
                         .filter((n) => n.mahasiswaNim === currentUser.username)
@@ -1008,7 +1008,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
               {/* Form to open attendance */}
               <div className="lg:col-span-1 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
                 <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                  <CheckSquare className="w-4 h-4 text-blue-500" />
+                  <CheckSquare className="w-4 h-4 text-red-700" />
                   Buka Sesi Kehadiran Baru
                 </h3>
 
@@ -1065,7 +1065,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 shadow-sm"
+                    className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-red-800 text-white font-bold text-xs hover:bg-red-900 shadow-sm"
                   >
                     Buka Absen QR
                   </button>
@@ -1111,10 +1111,10 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                             </td>
                             <td className="p-3 text-center font-bold">Pertemuan {ap.pertemuanKe}</td>
                             <td className="p-3">{ap.tanggal}</td>
-                            <td className="p-3 font-mono font-bold text-blue-600 select-all">{ap.kodeQr}</td>
+                            <td className="p-3 font-mono font-bold text-red-800 select-all">{ap.kodeQr}</td>
                             <td className="p-3 text-center">
                               <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                                ap.status === 'Buka' ? 'bg-blue-50 text-blue-700 animate-pulse' : 'bg-rose-50 text-rose-700'
+                                ap.status === 'Buka' ? 'bg-red-50 text-red-900 animate-pulse' : 'bg-rose-50 text-rose-700'
                               }`}>{ap.status}</span>
                             </td>
                             <td className="p-3 text-right">
@@ -1143,7 +1143,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
               {/* Scan interface */}
               <div className="lg:col-span-1 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4">
                 <h3 className="font-bold text-sm text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                  <QrCode className="w-4.5 h-4.5 text-blue-500" />
+                  <QrCode className="w-4.5 h-4.5 text-red-700" />
                   Presensi QR Code Perkuliahan
                 </h3>
 
@@ -1160,14 +1160,14 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                       placeholder="e.g. QR-PRESENSI-JDW01-P2-..."
                       value={scannedQrCodeInput}
                       onChange={(e) => setScannedQrCodeInput(e.target.value)}
-                      className="w-full text-xs p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 focus:outline-blue-500"
+                      className="w-full text-xs p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 focus:outline-red-500"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 shadow-sm"
+                    className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-red-800 text-white font-bold text-xs hover:bg-red-900 shadow-sm"
                   >
                     Kirim Kehadiran (Hadir)
                   </button>
@@ -1214,7 +1214,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                               <td className="p-3">{pert?.tanggal}</td>
                               <td className="p-3 font-semibold text-slate-600">{new Date(am.waktuPresensi).toLocaleTimeString()}</td>
                               <td className="p-3 text-center">
-                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700">
+                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-900">
                                   {am.status}
                                 </span>
                               </td>
@@ -1241,7 +1241,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
             {currentRole === 'Administrator' && (
               <button
                 onClick={() => setCalModalOpen(true)}
-                className="text-xs px-3 py-1.5 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700"
+                className="text-xs px-3 py-1.5 rounded-lg bg-red-800 text-white font-bold hover:bg-red-900"
               >
                 Tambah Agenda
               </button>
@@ -1253,7 +1253,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
               {calList.map((cal) => (
                 <div key={cal.id} className="flex gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-lg bg-blue-100 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400">
+                    <div className="p-3 rounded-lg bg-red-100 dark:bg-red-950/40 text-red-800 dark:text-red-600">
                       <Calendar className="w-6 h-6" />
                     </div>
                     <div>
@@ -1264,7 +1264,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                     </div>
                   </div>
                   <span className={`px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase ${
-                    cal.kategori === 'UTS' || cal.kategori === 'UAS' ? 'bg-orange-50 text-orange-700' : 'bg-blue-50 text-blue-700'
+                    cal.kategori === 'UTS' || cal.kategori === 'UAS' ? 'bg-orange-50 text-orange-700' : 'bg-red-50 text-red-900'
                   }`}>{cal.kategori}</span>
                 </div>
               ))}
@@ -1279,7 +1279,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                   type="text"
                   value={calForm.event || ''}
                   onChange={(e) => setCalForm({ ...calForm, event: e.target.value })}
-                  className="w-full text-xs p-2.5 rounded-lg border focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 rounded-lg border focus:outline-red-500"
                   required
                 />
               </div>
@@ -1291,7 +1291,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                     type="date"
                     value={calForm.tanggalMulai || ''}
                     onChange={(e) => setCalForm({ ...calForm, tanggalMulai: e.target.value })}
-                    className="w-full text-xs p-2.5 border rounded-lg focus:outline-blue-500"
+                    className="w-full text-xs p-2.5 border rounded-lg focus:outline-red-500"
                     required
                   />
                 </div>
@@ -1301,7 +1301,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                     type="date"
                     value={calForm.tanggalSelesai || ''}
                     onChange={(e) => setCalForm({ ...calForm, tanggalSelesai: e.target.value })}
-                    className="w-full text-xs p-2.5 border rounded-lg focus:outline-blue-500"
+                    className="w-full text-xs p-2.5 border rounded-lg focus:outline-red-500"
                     required
                   />
                 </div>
@@ -1333,7 +1333,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold"
+                  className="px-4 py-2 bg-red-800 text-white rounded-lg text-xs font-semibold"
                 >
                   Tambah Agenda
                 </button>
@@ -1364,11 +1364,11 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                         onClick={() => setSelectedRecipient(d.nidn)}
                         className={`w-full text-left p-3 rounded-xl border flex items-center gap-3 transition-colors ${
                           selectedRecipient === d.nidn
-                            ? 'bg-blue-50 border-blue-300 dark:bg-blue-950/40 dark:border-blue-800'
+                            ? 'bg-red-50 border-red-300 dark:bg-red-950/40 dark:border-red-800'
                             : 'border-slate-100 dark:border-slate-800 hover:bg-slate-50'
                         }`}
                       >
-                        <div className="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs">
+                        <div className="w-8 h-8 rounded-full bg-red-800 text-white font-bold flex items-center justify-center text-xs">
                           {d.nama.charAt(0)}
                         </div>
                         <div>
@@ -1383,7 +1383,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                         onClick={() => setSelectedRecipient(m.nim)}
                         className={`w-full text-left p-3 rounded-xl border flex items-center gap-3 transition-colors ${
                           selectedRecipient === m.nim
-                            ? 'bg-blue-50 border-blue-300 dark:bg-blue-950/40 dark:border-blue-800'
+                            ? 'bg-red-50 border-red-300 dark:bg-red-950/40 dark:border-red-800'
                             : 'border-slate-100 dark:border-slate-800 hover:bg-slate-50'
                         }`}
                       >
@@ -1405,7 +1405,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                 <>
                   {/* Messages header */}
                   <div className="px-5 py-3 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center gap-2">
-                    <MessageSquare className="w-4.5 h-4.5 text-blue-500" />
+                    <MessageSquare className="w-4.5 h-4.5 text-red-700" />
                     <span className="text-xs font-bold text-slate-800 dark:text-white">
                       Chat: {selectedRecipient}
                     </span>
@@ -1418,7 +1418,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                       return (
                         <div key={c.id} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
                           <div className={`max-w-[70%] p-3 rounded-2xl text-xs ${
-                            isMe ? 'bg-blue-600 text-white rounded-br-none' : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-bl-none border border-slate-100 dark:border-slate-800'
+                            isMe ? 'bg-red-800 text-white rounded-br-none' : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-bl-none border border-slate-100 dark:border-slate-800'
                           }`}>
                             <p className="leading-relaxed">{c.pesan}</p>
                             <span className="text-[9px] text-slate-400 dark:text-slate-400 text-right block mt-1">
@@ -1437,12 +1437,12 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                       placeholder="Tulis pesan akademik..."
                       value={newChatMsg}
                       onChange={(e) => setNewChatMsg(e.target.value)}
-                      className="flex-1 text-xs p-2.5 rounded-lg border focus:outline-blue-500"
+                      className="flex-1 text-xs p-2.5 rounded-lg border focus:outline-red-500"
                       required
                     />
                     <button
                       type="submit"
-                      className="p-2.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+                      className="p-2.5 rounded-lg bg-red-800 text-white hover:bg-red-900"
                     >
                       <Send className="w-4 h-4" />
                     </button>
@@ -1470,7 +1470,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
             {currentRole === 'Mahasiswa' && (
               <button
                 onClick={() => setSuratModalOpen(true)}
-                className="text-xs px-3 py-1.5 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 shadow-sm"
+                className="text-xs px-3 py-1.5 rounded-lg bg-red-800 text-white font-bold hover:bg-red-900 shadow-sm"
               >
                 Ajukan Surat Baru
               </button>
@@ -1513,13 +1513,13 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                             <span className="font-bold block">{mhs?.nama || s.mahasiswaNim}</span>
                             <span className="text-[9px] text-slate-400 font-mono">NIM: {s.mahasiswaNim}</span>
                           </td>
-                          <td className="p-3 font-bold text-blue-600 dark:text-blue-400">{s.tipe}</td>
+                          <td className="p-3 font-bold text-red-800 dark:text-red-600">{s.tipe}</td>
                           <td className="p-3">{s.keterangan}</td>
                           <td className="p-3 text-center">{s.tanggalPengajuan}</td>
                           <td className="p-3 text-center">
                             <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
                               s.status === 'Selesai'
-                                ? 'bg-blue-50 text-blue-700'
+                                ? 'bg-red-50 text-red-900'
                                 : s.status === 'Diproses'
                                 ? 'bg-amber-50 text-amber-700 animate-pulse'
                                 : 'bg-slate-100 text-slate-700'
@@ -1538,7 +1538,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                               {s.status === 'Diproses' && (
                                 <button
                                   onClick={() => handleProcessSurat(s.id, 'Selesai')}
-                                  className="px-2 py-1 rounded bg-blue-600 text-white font-bold text-[10px] hover:bg-blue-700"
+                                  className="px-2 py-1 rounded bg-red-800 text-white font-bold text-[10px] hover:bg-red-900"
                                 >
                                   Selesai & Unduh
                                 </button>
@@ -1577,7 +1577,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                   onChange={(e) => setSuratForm({ ...suratForm, keterangan: e.target.value })}
                   placeholder="e.g. Melengkapi syarat beasiswa eksternal, dll..."
                   rows={3}
-                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-red-500"
                   required
                 />
               </div>
@@ -1592,7 +1592,7 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold"
+                  className="px-4 py-2 bg-red-800 text-white rounded-lg text-xs font-semibold"
                 >
                   Kirim Permohonan
                 </button>
@@ -1642,9 +1642,9 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                       max="5"
                       value={evalSkor.pedagogik}
                       onChange={(e) => setEvalSkor({ ...evalSkor, pedagogik: parseInt(e.target.value) })}
-                      className="w-full accent-blue-500 mt-2"
+                      className="w-full accent-red-600 mt-2"
                     />
-                    <div className="flex justify-between text-[10px] font-bold text-blue-600">
+                    <div className="flex justify-between text-[10px] font-bold text-red-800">
                       <span>Kurang</span>
                       <span>Sangat Baik ({evalSkor.pedagogik})</span>
                     </div>
@@ -1660,9 +1660,9 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                       max="5"
                       value={evalSkor.profesional}
                       onChange={(e) => setEvalSkor({ ...evalSkor, profesional: parseInt(e.target.value) })}
-                      className="w-full accent-blue-500 mt-2"
+                      className="w-full accent-red-600 mt-2"
                     />
-                    <div className="flex justify-between text-[10px] font-bold text-blue-600">
+                    <div className="flex justify-between text-[10px] font-bold text-red-800">
                       <span>Kurang</span>
                       <span>Sangat Baik ({evalSkor.profesional})</span>
                     </div>
@@ -1678,9 +1678,9 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                       max="5"
                       value={evalSkor.sosial}
                       onChange={(e) => setEvalSkor({ ...evalSkor, sosial: parseInt(e.target.value) })}
-                      className="w-full accent-blue-500 mt-2"
+                      className="w-full accent-red-600 mt-2"
                     />
-                    <div className="flex justify-between text-[10px] font-bold text-blue-600">
+                    <div className="flex justify-between text-[10px] font-bold text-red-800">
                       <span>Kurang</span>
                       <span>Sangat Baik ({evalSkor.sosial})</span>
                     </div>
@@ -1696,9 +1696,9 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                       max="5"
                       value={evalSkor.kompetensi}
                       onChange={(e) => setEvalSkor({ ...evalSkor, kompetensi: parseInt(e.target.value) })}
-                      className="w-full accent-blue-500 mt-2"
+                      className="w-full accent-red-600 mt-2"
                     />
-                    <div className="flex justify-between text-[10px] font-bold text-blue-600">
+                    <div className="flex justify-between text-[10px] font-bold text-red-800">
                       <span>Kurang</span>
                       <span>Sangat Baik ({evalSkor.kompetensi})</span>
                     </div>
@@ -1713,14 +1713,14 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
                   onChange={(e) => setEvalKomentar(e.target.value)}
                   placeholder="Ulasan Anda sangat berharga dan bersifat rahasia (anonim)..."
                   rows={3}
-                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-blue-500"
+                  className="w-full text-xs p-2.5 border rounded-lg focus:outline-red-500"
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="px-4 py-2 rounded-lg bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 shadow-sm"
+                className="px-4 py-2 rounded-lg bg-red-800 text-white font-bold text-xs hover:bg-red-900 shadow-sm"
               >
                 Kirim Evaluasi Mutu
               </button>
@@ -1731,3 +1731,4 @@ export default function AkademikModules({ activeView, currentRole, currentUser }
     </div>
   );
 }
+

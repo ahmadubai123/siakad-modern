@@ -66,33 +66,46 @@ export default function Sidebar({
     const isSelected = activeView === view;
     return `w-full flex items-center justify-between px-3 py-2 text-xs font-medium rounded-md transition-all ${
       isSelected
-        ? 'bg-blue-600 text-white shadow-sm font-semibold'
-        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+        ? 'bg-red-800 text-white shadow-sm font-semibold'
+        : 'text-gray-600 hover:bg-red-50 hover:text-red-800'
     }`;
   };
 
   const folderClass = () => {
-    return 'w-full flex items-center justify-between px-3 py-2 text-[10px] uppercase font-bold text-gray-500 hover:text-gray-300 transition-colors tracking-wider';
+    return 'w-full flex items-center justify-between px-3 py-2 text-[10px] uppercase font-bold text-gray-500 hover:text-red-800 transition-colors tracking-wider';
   };
 
   return (
     <aside
-      className={`fixed top-0 bottom-0 left-0 z-30 w-64 bg-[#343a40] text-gray-300 border-r border-gray-700 transition-transform lg:translate-x-0 ${
+      className={`fixed top-0 bottom-0 left-0 z-30 w-64 bg-white text-gray-600 border-r border-red-200 transition-transform lg:translate-x-0 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       } flex flex-col justify-between`}
     >
       {/* Brand Header */}
-      <div className="p-4 border-b-2 border-gray-200 flex items-center gap-3 bg-white shrink-0 shadow-lg">
+      <div className="p-4 border-b-2 border-red-100 flex items-center gap-3 bg-white shrink-0 shadow-sm">
         <img
           src="/images/logo.png"
           alt="Logo Universitas"
           className="h-8 w-8 object-contain"
         />
-        <span className="text-blue-600 font-bold text-lg uppercase tracking-tight">SIAKAD v2.0</span>
+        <span className="text-red-800 font-bold text-lg uppercase tracking-tight">SIAKAD v2.0</span>
       </div>
 
       {/* User Card */}
-      <div className="p-4 flex items-center gap-3 border-b border-gray-700 mb-2 shrink-0 bg-[#343a40]">
+      <div className="p-4 flex items-center gap-3 border-b border-red-100 mb-2 shrink-0 bg-red-50">
+        <div className="w-10 h-10 rounded-full bg-red-800 overflow-hidden flex items-center justify-center text-white font-bold text-sm shrink-0 border border-red-700">
+          {currentRole[0]}
+        </div>
+        <div className="flex flex-col min-w-0">
+          <span className="text-red-900 text-sm font-medium truncate">{currentRole === 'Administrator' ? 'Super Admin' : currentRole}</span>
+          <span className="text-green-600 text-[10px] flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-green-500"></span> Online
+          </span>
+        </div>
+      </div>
+
+      {/* User Card */}
+      <div className="p-4 flex items-center gap-3 border-b border-red-100 mb-2 shrink-0 bg-red-50">
         <div className="w-10 h-10 rounded-full bg-gray-600 overflow-hidden flex items-center justify-center text-white font-bold text-sm shrink-0 border border-gray-500">
           {currentRole[0]}
         </div>
@@ -453,10 +466,10 @@ export default function Sidebar({
       </div>
 
       {/* Footer Profile summary */}
-      <div className="p-3 border-t border-gray-700 bg-[#2f353a]">
+      <div className="p-3 border-t border-red-200 bg-white">
         <button
           onClick={onLogout}
-          className="w-full flex items-center justify-center gap-2 py-2 text-xs font-semibold text-red-400 hover:bg-gray-700 rounded-md border border-gray-700 transition-colors"
+          className="w-full flex items-center justify-center gap-2 py-2 text-xs font-semibold text-red-800 hover:bg-red-50 rounded-md border border-red-200 transition-colors"
         >
           <LogOut className="w-4 h-4" />
           <span>Keluar Sistem</span>

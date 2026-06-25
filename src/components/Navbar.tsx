@@ -54,16 +54,16 @@ export default function Navbar({
         </button>
 
         <div className="flex items-center gap-2 lg:ml-2">
-          <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-blue-600 text-white shadow-md">
+          <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-red-800 text-white shadow-md">
             <GraduationCap className="w-5 h-5" />
           </div>
           <span className="text-lg font-bold tracking-tight text-slate-800 dark:text-white hidden sm:inline-block">
-            SIAKAD<span className="text-blue-600">Modern</span>
+            SIAKAD<span className="text-red-800">Modern</span>
           </span>
         </div>
 
         {/* Semester Badge */}
-        <span className="hidden md:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-400 border border-blue-200/50 dark:border-blue-800/30 ml-4">
+        <span className="hidden md:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-900 dark:bg-red-950/40 dark:text-red-600 border border-red-200/50 dark:border-red-800/30 ml-4">
           Ganjil 2026/2027 — Aktif
         </span>
       </div>
@@ -118,18 +118,18 @@ export default function Navbar({
             <div className="absolute right-0 mt-2 w-80 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl z-50">
               <div className="p-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
                 <span className="font-semibold text-sm text-slate-800 dark:text-slate-100">Notifikasi</span>
-                <span className="text-xs text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">Tandai dibaca</span>
+                <span className="text-xs text-red-800 dark:text-red-600 hover:underline cursor-pointer">Tandai dibaca</span>
               </div>
               <div className="max-h-64 overflow-y-auto">
                 {notifications.map((n) => (
                   <div
                     key={n.id}
                     className={`p-3 border-b border-slate-50 dark:border-slate-800/60 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors cursor-pointer ${
-                      n.unread ? 'bg-blue-50/20 dark:bg-blue-950/10' : ''
+                      n.unread ? 'bg-red-50/20 dark:bg-red-950/10' : ''
                     }`}
                   >
                     <div className="flex items-start gap-2">
-                      <div className={`w-1.5 h-1.5 rounded-full mt-1.5 ${n.unread ? 'bg-blue-500' : 'bg-transparent'}`} />
+                      <div className={`w-1.5 h-1.5 rounded-full mt-1.5 ${n.unread ? 'bg-red-700' : 'bg-transparent'}`} />
                       <div>
                         <p className="text-xs text-slate-700 dark:text-slate-300 font-medium leading-normal">{n.text}</p>
                         <span className="text-[10px] text-slate-400 mt-1 block">{n.time}</span>
@@ -152,7 +152,7 @@ export default function Navbar({
             }}
             className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           >
-            <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold text-sm shadow">
+            <div className="w-8 h-8 rounded-full bg-red-800 text-white flex items-center justify-center font-semibold text-sm shadow">
               {currentUser.displayName ? currentUser.displayName.charAt(0) : 'U'}
             </div>
             <div className="hidden md:block text-left">
