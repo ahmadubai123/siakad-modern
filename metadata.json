@@ -1,0 +1,6 @@
+{
+  "name": "SIAKAD Modern",
+  "description": "Sistem Informasi Akademik Modern berbasis full-stack React dan Express dengan dashboard analitik interaktif, manajemen KRS, penilaian, kehadiran QR-code, kalender akademik, pengajuan surat, evaluasi dosen, dan log audit lengkap.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

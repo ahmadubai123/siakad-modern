@@ -1,0 +1,665 @@
+{
+  "mahasiswa": [],
+  "dosen": [],
+  "fakultas": [
+    {
+      "kode": "09",
+      "nama": "Ilmu Komputer",
+      "dekan": "Sigit Maulana S.Kom,M,.kom",
+      "id": "fak-1782370675410"
+    }
+  ],
+  "prodi": [
+    {
+      "kode": "09",
+      "nama": "ilmu komputer",
+      "fakultasId": "fak-1782370675410",
+      "id": "pro-1782370696097"
+    }
+  ],
+  "tahunAkademik": [
+    {
+      "id": "ta-2026",
+      "tahun": "2026/2027",
+      "semesterTipe": "Ganjil",
+      "status": "Aktif"
+    },
+    {
+      "tahun": "2026/2027",
+      "semesterTipe": "Genap",
+      "status": "Aktif",
+      "id": "tah-1782365637212"
+    }
+  ],
+  "matakuliah": [],
+  "kelas": [],
+  "jadwal": [],
+  "krs": [],
+  "nilai": [],
+  "absensiPertemuan": [
+    {
+      "id": "abs-p-01",
+      "jadwalId": "jdw-01",
+      "pertemuanKe": 1,
+      "tanggal": "2026-06-15",
+      "kodeQr": "QR-PRESENSI-JDW01-P1",
+      "status": "Tutup"
+    },
+    {
+      "id": "abs-p-02",
+      "jadwalId": "jdw-01",
+      "pertemuanKe": 2,
+      "tanggal": "2026-06-22",
+      "kodeQr": "QR-PRESENSI-JDW01-P2",
+      "status": "Tutup"
+    },
+    {
+      "id": "abs-p-1782362916738",
+      "jadwalId": "jdw-01",
+      "pertemuanKe": 1,
+      "tanggal": "2026-06-25",
+      "kodeQr": "QR-PRESENSI-jdw-01-P1-1782362916738",
+      "status": "Tutup"
+    }
+  ],
+  "absensiMahasiswa": [],
+  "kalender": [
+    {
+      "id": "cal-01",
+      "event": "Registrasi Ulang & Pengisian KRS Ganjil",
+      "tanggalMulai": "2026-07-01",
+      "tanggalSelesai": "2026-07-15",
+      "kategori": "Registrasi"
+    },
+    {
+      "id": "cal-02",
+      "event": "Awal Perkuliahan Semester Ganjil",
+      "tanggalMulai": "2026-08-01",
+      "tanggalSelesai": "2026-08-05",
+      "kategori": "KRS"
+    },
+    {
+      "id": "cal-03",
+      "event": "Ujian Tengah Semester (UTS)",
+      "tanggalMulai": "2026-10-05",
+      "tanggalSelesai": "2026-10-16",
+      "kategori": "UTS"
+    },
+    {
+      "id": "cal-04",
+      "event": "Ujian Akhir Semester (UAS)",
+      "tanggalMulai": "2026-12-07",
+      "tanggalSelesai": "2026-12-18",
+      "kategori": "UAS"
+    }
+  ],
+  "chat": [
+    {
+      "id": "cht-01",
+      "pengirimId": "220101001",
+      "penerimaId": "0411027501",
+      "pesan": "Permisi Pak Budi, untuk materi Pemrograman Web pertemuan 2 ada di mana ya?",
+      "waktu": "2026-06-24T14:30:00",
+      "baca": true
+    },
+    {
+      "id": "cht-02",
+      "pengirimId": "0411027501",
+      "penerimaId": "220101001",
+      "pesan": "Halo Ahmad. Materi sudah saya unggah di Google Drive kelas kita ya.",
+      "waktu": "2026-06-24T14:45:00",
+      "baca": false
+    }
+  ],
+  "surat": [
+    {
+      "id": "srt-01",
+      "mahasiswaNim": "220101001",
+      "tipe": "Surat Aktif Kuliah",
+      "keterangan": "Keperluan mengurus tunjangan gaji orang tua.",
+      "status": "Selesai",
+      "tanggalPengajuan": "2026-06-18"
+    },
+    {
+      "id": "srt-02",
+      "mahasiswaNim": "220101002",
+      "tipe": "Surat Keterangan Mahasiswa",
+      "keterangan": "Untuk mendaftar beasiswa eksternal.",
+      "status": "Selesai",
+      "tanggalPengajuan": "2026-06-23"
+    }
+  ],
+  "evaluasi": [
+    {
+      "id": "ev-01",
+      "mahasiswaNim": "220101001",
+      "dosenNidn": "0411027501",
+      "kelasId": "kls-01",
+      "skorKompetensi": 5,
+      "skorPedagogik": 4,
+      "skorProfesional": 5,
+      "skorSosial": 4,
+      "komentar": "Sangat bagus cara mengajarnya Pak Budi, materi mudah dipahami.",
+      "tahunAkademikId": "ta-2026"
+    }
+  ],
+  "auditLog": [
+    {
+      "id": "log-1782393755553-635",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T13:22:35.553Z"
+    },
+    {
+      "id": "log-1782393701319-703",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T13:21:41.319Z"
+    },
+    {
+      "id": "log-1782376022174-985",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T08:27:02.174Z"
+    },
+    {
+      "id": "log-1782375952847-125",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T08:25:52.847Z"
+    },
+    {
+      "id": "log-1782375928191-346",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T08:25:28.191Z"
+    },
+    {
+      "id": "log-1782375592583-683",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T08:19:52.583Z"
+    },
+    {
+      "id": "log-1782374135232-578",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T07:55:35.232Z"
+    },
+    {
+      "id": "log-1782373550828-268",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T07:45:50.828Z"
+    },
+    {
+      "id": "log-1782371657213-287",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Tambah Fakultas",
+      "deskripsi": "Berhasil menambahkan Fakultas baru: Ilmu Komputer",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T07:14:17.213Z"
+    },
+    {
+      "id": "log-1782371561089-659",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T07:12:41.089Z"
+    },
+    {
+      "id": "log-1782371418967-857",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Edit Surat Akademik",
+      "deskripsi": "Berhasil memperbarui Surat Akademik: srt-02",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T07:10:18.968Z"
+    },
+    {
+      "id": "log-1782370929266-477",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T07:02:09.266Z"
+    },
+    {
+      "id": "log-1782370696101-941",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Tambah Program Studi",
+      "deskripsi": "Berhasil menambahkan Program Studi baru: ilmu komputer",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:58:16.101Z"
+    },
+    {
+      "id": "log-1782370675414-565",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Tambah Fakultas",
+      "deskripsi": "Berhasil menambahkan Fakultas baru: Ilmu Komputer",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:57:55.414Z"
+    },
+    {
+      "id": "log-1782370555817-838",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Fakultas",
+      "deskripsi": "Berhasil menghapus Fakultas: fak-01",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:55:55.817Z"
+    },
+    {
+      "id": "log-1782370423841-282",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:53:43.841Z"
+    },
+    {
+      "id": "log-1782370407620-656",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:53:27.620Z"
+    },
+    {
+      "id": "log-1782369887848-398",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Tambah Program Studi",
+      "deskripsi": "Berhasil menambahkan Program Studi baru: Ilmu Komputer",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:44:47.848Z"
+    },
+    {
+      "id": "log-1782369784827-86",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Program Studi",
+      "deskripsi": "Berhasil menghapus Program Studi: prd-02",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:43:04.827Z"
+    },
+    {
+      "id": "log-1782369781728-471",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Program Studi",
+      "deskripsi": "Berhasil menghapus Program Studi: prd-01",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:43:01.728Z"
+    },
+    {
+      "id": "log-1782369760496-260",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Dosen",
+      "deskripsi": "Berhasil menghapus Dosen: 0422058002",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:42:40.496Z"
+    },
+    {
+      "id": "log-1782369756929-453",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Dosen",
+      "deskripsi": "Berhasil menghapus Dosen: 0411027501",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:42:36.929Z"
+    },
+    {
+      "id": "log-1782369751134-896",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Mahasiswa",
+      "deskripsi": "Berhasil menghapus Mahasiswa: 220101002",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:42:31.134Z"
+    },
+    {
+      "id": "log-1782369747781-600",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Mahasiswa",
+      "deskripsi": "Berhasil menghapus Mahasiswa: 220101001",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:42:27.781Z"
+    },
+    {
+      "id": "log-1782369732963-828",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T06:42:12.963Z"
+    },
+    {
+      "id": "log-1782366549722-76",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:49:09.722Z"
+    },
+    {
+      "id": "log-1782366017653-207",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:40:17.653Z"
+    },
+    {
+      "id": "log-1782365914040-137",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:38:34.040Z"
+    },
+    {
+      "id": "log-1782365824357-659",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:37:04.357Z"
+    },
+    {
+      "id": "log-1782365785707-936",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Dosen",
+      "deskripsi": "Berhasil menghapus Dosen: 0422058002",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:36:25.707Z"
+    },
+    {
+      "id": "log-1782365780489-885",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Dosen",
+      "deskripsi": "Berhasil menghapus Dosen: 0411027501",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:36:20.489Z"
+    },
+    {
+      "id": "log-1782365717024-998",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:35:17.024Z"
+    },
+    {
+      "id": "log-1782365660341-799",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Kelas",
+      "deskripsi": "Berhasil menghapus Kelas: kls-01",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:34:20.341Z"
+    },
+    {
+      "id": "log-1782365657265-856",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Kelas",
+      "deskripsi": "Berhasil menghapus Kelas: kls-02",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:34:17.265Z"
+    },
+    {
+      "id": "log-1782365653668-883",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Kelas",
+      "deskripsi": "Berhasil menghapus Kelas: kls-03",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:34:13.668Z"
+    },
+    {
+      "id": "log-1782365637230-714",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Tambah Tahun Akademik",
+      "deskripsi": "Berhasil menambahkan Tahun Akademik baru: tah-1782365637212",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:33:57.230Z"
+    },
+    {
+      "id": "log-1782365605147-928",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Program Studi",
+      "deskripsi": "Berhasil menghapus Program Studi: prd-02",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:33:25.147Z"
+    },
+    {
+      "id": "log-1782365601662-805",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Program Studi",
+      "deskripsi": "Berhasil menghapus Program Studi: prd-01",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:33:21.662Z"
+    },
+    {
+      "id": "log-1782365589398-859",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Mahasiswa",
+      "deskripsi": "Berhasil menghapus Mahasiswa: 220101001",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:33:09.398Z"
+    },
+    {
+      "id": "log-1782365506404-75",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:31:46.404Z"
+    },
+    {
+      "id": "log-1782364718022-322",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:18:38.022Z"
+    },
+    {
+      "id": "log-1782364624859-817",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Approval KRS",
+      "deskripsi": "Approval KRS ID krs-04 menjadi Ditolak",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:17:04.859Z"
+    },
+    {
+      "id": "log-1782364601636-261",
+      "userId": "sys",
+      "username": "System",
+      "role": "Administrator",
+      "aktivitas": "Hapus Fakultas",
+      "deskripsi": "Berhasil menghapus Fakultas: fak-02",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:16:41.636Z"
+    },
+    {
+      "id": "log-1782364480855-375",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T05:14:40.855Z"
+    },
+    {
+      "id": "log-1782363403109-8",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T04:56:43.109Z"
+    },
+    {
+      "id": "log-1782362916749-861",
+      "userId": "sys",
+      "username": "System",
+      "role": "Dosen",
+      "aktivitas": "Buka Absensi",
+      "deskripsi": "Dosen membuka absensi pertemuan ke-1 untuk jadwal jdw-01",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T04:48:36.749Z"
+    },
+    {
+      "id": "log-1782362824902-379",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T04:47:04.902Z"
+    },
+    {
+      "id": "log-1782362506053-728",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T04:41:46.053Z"
+    },
+    {
+      "id": "log-1782362488220-294",
+      "userId": "usr-admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil login ke sistem sebagai Administrator",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-25T04:41:28.220Z"
+    },
+    {
+      "id": "log-01",
+      "userId": "admin",
+      "username": "Administrator",
+      "role": "Administrator",
+      "aktivitas": "Login",
+      "deskripsi": "Berhasil masuk ke dalam sistem.",
+      "ip": "127.0.0.1",
+      "waktu": "2026-06-24T20:30:00"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-admin",
+      "username": "admin",
+      "email": "admin@siakad.ac.id",
+      "role": "Administrator",
+      "status": "Aktif"
+    },
+    {
+      "id": "usr-mhs3",
+      "username": "220102001",
+      "email": "rian.hidayat@siakad.ac.id",
+      "role": "Mahasiswa",
+      "referenceId": "220102001",
+      "status": "Aktif"
+    }
+  ]
+}
